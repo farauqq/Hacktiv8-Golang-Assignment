@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="refresh" content="5" />
+    <title>Assignment 3</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        list-style: none;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        margin: 70px 10px 100px 10px;
+        background-image: url("https://images.hdqwalls.com/download/minimal-sunset-landscape-4k-w5-1440x900.jpg");
+        background-size: 1601px 780px;
+      }
+
+      h1 {
+        padding-bottom: 50px;
+        text-align: center;
+        color: whitesmoke;
+      }
+      h2 {
+        margin: auto;
+        text-align: center;
+        color: lightgrey;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Status Air dan Angin</h1>
+    {{if .waterBahaya}}
+    <style>
+      #water {
+        color: red;
+      }
+    </style>
+    {{end}} {{if .waterSiaga}}
+    <style>
+      #water {
+        color: orange;
+      }
+    </style>
+    {{end}} {{if .waterAman}}
+    <style>
+      #water {
+        color: green;
+      }
+    </style>
+    {{end}} {{if .windBahaya}}
+    <style>
+      #wind {
+        color: red;
+      }
+    </style>
+    {{end}} {{if .windSiaga}}
+    <style>
+      #wind {
+        color: orange;
+      }
+    </style>
+    {{end}} {{if .windAman}}
+    <style>
+      #wind {
+        color: green;
+      }
+    </style>
+    {{end}}
+    <h2>Ketinggian Air: {{.water}} m</h2>
+    <h2 id="water">Status: {{.statusWater}}</h2>
+    <br />
+    <h2>Kecepatan Angin: {{.wind}} m/s</h2>
+    <h2 id="wind">Status: {{.statusWind}}</h2>
+  </body>
+</html>
